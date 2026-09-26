@@ -1,7 +1,7 @@
 /* Change only this file before sending */
 window.STORY = {
   secret: { d: "10", m: "10", y: "2001" }, // DD MM YYYY — edit this
-  sender: "Shivu",
+  sender: "Shiva",
   receiver: "Mera Baccha",
   letter: [
     "Main nasamajh hoon, thoda nakhreela, kabhi-kabhi besharam bhi. Phir bhi jaisa bhi hoon, sirf tumhara hi hoon.",
