@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#14111c" />
+  <title>Ek raat, ek khat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&family=Tangerine:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="vignette"></div>
+  <div class="moon" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <p class="brand">raat ka khat</p>
+    <nav class="chapters" id="chapters" aria-label="Chapters"></nav>
+  </header>
+
+  <main id="book">
+    <!-- CHAPTER 0: LOCK -->
+    <section class="chapter is-on" data-ch="0">
+      <div class="stage lock-stage">
+        <p class="whisper">sirf tum jaante ho ye raaz</p>
+        <h1>Is taale ko kholo</h1>
+        <p class="lede">Woh din likho jo sirf hum dono ke beech hai. Galat hua to taala kaampe ga.</p>
+
+        <form id="lockForm" class="lock-form" autocomplete="off">
+          <div class="lock-body" id="lockBody">
+            <div class="shackle"></div>
+            <div class="lock-face">
+              <div class="dial">
+                <label>din
+                  <input id="dd" inputmode="numeric" maxlength="2" placeholder="00" required />
+                </label>
+                <span class="sep">·</span>
+                <label>mahina
+                  <input id="mm" inputmode="numeric" maxlength="2" placeholder="00" required />
+                </label>
+                <span class="sep">·</span>
+                <label>saal
+                  <input id="yyyy" inputmode="numeric" maxlength="4" placeholder="0000" required />
+                </label>
+              </div>
+              <button type="submit" class="key-btn">chaabi ghumao</button>
+            </div>
+          </div>
+        </form>
+        <p class="hint" id="hint">ishara: tumhara pyaara hi hoon</p>
+      </div>
+    </section>
+
+    <!-- CHAPTER 1: LETTER -->
+    <section class="chapter" data-ch="1">
+      <div class="stage letter-stage">
+        <div class="envelope" id="envelope">
+          <button class="wax" id="wax" type="button" aria-label="Open letter">
+            <span>S</span>
+          </button>
+          <p class="env-label">ek maafi · sealed</p>
+        </div>
+
+        <article class="scroll hidden" id="scroll">
+          <header class="scroll-head">
+            <span>Baby Shivu se</span>
+            <span>Mera Baccha ke naam</span>
+          </header>
+          <h2>Meri rasmalai,</h2>
+          <div class="ink" id="ink"></div>
+          <p class="sign">maaf kar dena<br /><em>— Shivu</em></p>
+        </article>
+
+        <div class="nav-row hidden" id="letterNav">
+          <button class="ghost" data-go="-1">peeche</button>
+          <button class="gold" data-go="1">aage badho</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 2: SCENES -->
+    <section class="chapter" data-ch="2">
+      <div class="stage scenes-stage">
+        <p class="whisper">teen chhote sapne</p>
+        <h2>Aise hi rehna hai</h2>
+        <p class="lede">Gusse ke baad bhi yehi chahoonga — paas rehna, dil dena, nachna.</p>
+        <div class="scenes">
+          <article class="scene">
+            <div class="orb hug">
+              <i class="orb-dot a"></i>
+              <i class="orb-dot b"></i>
+              <b>◎</b>
+            </div>
+            <h3>paas</h3>
+            <p>Door pad jaaun to bhi wapas tumhare kandhe pe sir rakhna hai.</p>
+          </article>
+          <article class="scene">
+            <div class="orb gift">
+              <span class="spark">✦</span>
+              <b>◇</b>
+            </div>
+            <h3>tohfa</h3>
+            <p>Jo bhi mere paas hai, chhota sa hi sahi, tumhara hai.</p>
+          </article>
+          <article class="scene">
+            <div class="orb dance">
+              <i class="step l"></i>
+              <i class="step r"></i>
+              <b>♪</b>
+            </div>
+            <h3>dhun</h3>
+            <p>Hamari duniya wohi hai jahan har pal yaad ban jaata hai.</p>
+          </article>
+        </div>
+        <div class="nav-row">
+          <button class="ghost" data-go="-1">peeche</button>
+          <button class="gold" data-go="1">album kholo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 3: FILMSTRIP -->
+    <section class="chapter" data-ch="3">
+      <div class="stage film-stage">
+        <p class="whisper">hamara waqt</p>
+        <h2>Yaadein</h2>
+        <div class="film" id="film">
+          <button class="reel-btn prev" id="prevShot" type="button" aria-label="Previous">‹</button>
+          <div class="shot-wrap">
+            <figure class="shot is-show">
+              <div class="frame"><img src="assets/1.jpg" alt="" /></div>
+              <figcaption><small>pehli jhalak</small><strong>Khoobsurat shuruaat</strong><span>khushi ke pal</span></figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="frame tilt-a"><img src="assets/2.jpg" alt="" /></div>
+              <figcaption><small>phir mulaqaat</small><strong>Haseen nazaara</strong><span>jab tumne naam se pukara</span></figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="frame tilt-b"><img src="assets/3.jpg" alt="" /></div>
+              <figcaption><small>mera baccha</small><strong>Mera betu</strong><span>sorry, betu</span></figcaption>
+            </figure>
+            <figure class="shot">
+              <div class="frame"><img src="assets/4.jpg" alt="" /></div>
+              <figcaption><small>abhi bhi</small><strong>Hum dono</strong><span>ek dooje ke liye</span></figcaption>
+            </figure>
+          </div>
+          <button class="reel-btn next" id="nextShot" type="button" aria-label="Next">›</button>
+        </div>
+        <div class="sprockets" id="sprockets"></div>
+        <div class="nav-row">
+          <button class="ghost" data-go="-1">peeche</button>
+          <button class="gold" data-go="1">ek sawaal</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 4: QUESTION -->
+    <section class="chapter" data-ch="4">
+      <div class="stage ask-stage" id="askStage">
+        <div id="askBox">
+          <p class="whisper">ab seedha poochh loon</p>
+          <div class="ring">?</div>
+          <h2>Maaf kar diya?</h2>
+          <p class="lede" id="askLine">Dil pe bojh hai. Bas itna bata do.</p>
+          <div class="choice">
+            <button type="button" class="deny" id="deny">abhi nahi</button>
+            <button type="button" class="allow" id="allow">haan, maaf</button>
+          </div>
+          <button class="ghost" data-go="-1">peeche</button>
+        </div>
+
+        <div class="afterglow hidden" id="afterglow">
+          <div class="burst">✦</div>
+          <p class="whisper">mujhe ummeed thi</p>
+          <h2>Tumne haan kaha</h2>
+          <p class="lede">Is galti ke baad bhi tum yahin ho. Wahi kaafi hai, Mera Baccha.</p>
+          <blockquote>
+            Musibat ho to bhi saath. Pyaar kam nahi hoga.
+          </blockquote>
+          <p class="sign">aapka baccha<br /><em>Shivu</em></p>
+          <button class="gold" id="again" type="button">ek baar phir padho</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="curtain hidden" id="curtain">
+    <p>taala khul gaya</p>
+    <strong>ab andar aao</strong>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
