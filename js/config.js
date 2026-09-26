@@ -1,6 +1,6 @@
 /* Change only this file before sending */
 window.STORY = {
-  secret: { d: "02", m: "08", y: "2007" }, // DD MM YYYY — edit this
+  secret: { d: "10", m: "10", y: "2001" }, // DD MM YYYY — edit this
   sender: "Shivu",
   receiver: "Mera Baccha",
   letter: [
